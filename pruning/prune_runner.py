@@ -2,7 +2,8 @@ import os
 import torch
 
 from models.get_models import get_model
-from pruning import lr_rewinding
+from pruning import lr_rewinding, synflow
+from training import train_runner
 
 
 def run(platform):
@@ -21,6 +22,15 @@ def run(platform):
         model.logging_table(platform.logger)
         # Pruning
         lr_rewinding.run(platform, model)
+
+    elif platform.opt.pruner == "synflow":
+        model = get_model(platform.opt.model_type, platform.opt.dataset).to(platform.device)
+        model.weight_counter()
+        model.logging_table(platform.logger)
+        # Pruning
+        synflow.run(platform, model)
+        # Post-training
+        train_runner.run(platform, model=model, mode='post')
 
     model.weight_counter()
     platform.logger.logger.info("Pruning Done!\n\n")

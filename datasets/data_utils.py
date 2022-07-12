@@ -138,7 +138,7 @@ def get_dataloader(dataset_type, batch_size, validation_size=0, dataloader_seed=
 
     elif loader_type == "test":
         dataloader = torch.utils.data.DataLoader(dataset=dataset,
-                                                 batch_size=128,
+                                                 batch_size=batch_size,
                                                  shuffle=False,
                                                  **kwargs)
         return dataloader
