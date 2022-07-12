@@ -1,0 +1,22 @@
+{
+    "dataloader_seed": 200,
+    "dataset": "tiny_imagenet",
+    "validation_size": 0.1,
+
+    "kd": true,
+    "kd_type": "vanilla",
+    "student_model_type": "vgg-16",
+    "kd_epochs": 100,
+    "kd_batch_size": 256,
+    "kd_lr": 0.01,
+    "kd_lr_drops": [
+        30,
+        60,
+        80
+    ],
+    "kd_lr_drop_rate": 0.2,
+    "kd_optimizer": "nesterov",
+    "kd_weight_decay": 0.0005,
+    "kd_alpha": 0.95,
+    "kd_temp": 10
+}

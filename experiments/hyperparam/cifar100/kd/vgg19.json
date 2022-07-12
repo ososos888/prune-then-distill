@@ -1,0 +1,22 @@
+{
+    "dataloader_seed": 200,
+    "dataset": "cifar100",
+    "validation_size": 0.1,
+
+    "kd": true,
+    "kd_type": "vanilla",
+    "student_model_type": "vgg-19",
+    "kd_epochs": 200,
+    "kd_batch_size": 128,
+    "kd_lr": 0.1,
+    "kd_lr_drops": [
+        60,
+        120,
+        160
+    ],
+    "kd_lr_drop_rate": 0.2,
+    "kd_optimizer": "nesterov",
+    "kd_weight_decay": 0.0005,
+    "kd_alpha": 0.95,
+    "kd_temp": 10
+}

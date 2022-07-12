@@ -1,0 +1,19 @@
+{
+    "dataloader_seed": 200,
+    "model_type": "vgg-16",
+    "dataset": "tiny_imagenet",
+    "batch_size": 128,
+    "validation_size": 0.1,
+
+    "pre_train": true,
+    "epochs": 100,
+    "lr": 0.01,
+    "lr_drops": [
+        30,
+        60,
+        80
+    ],
+    "lr_drop_rate": 0.1,
+    "optimizer": "nesterov",
+    "weight_decay": 0.0001
+}

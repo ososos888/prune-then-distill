@@ -1,0 +1,16 @@
+{
+    "seed": 1000,
+    "dataloader_seed": 200,
+    "GPU_num": 0,
+    "model_type": "vgg19",
+    "dataset": "cifar100",
+    "validation_size": 0.1,
+
+    "batch_size": 128,
+    "epochs": 200,
+    "lr": 0.1,
+    "lr_drops": [60, 120, 160],
+    "lr_drop_rate": 0.2,
+    "optimizer": "nesterov",
+    "weight_decay": 0.0005
+}

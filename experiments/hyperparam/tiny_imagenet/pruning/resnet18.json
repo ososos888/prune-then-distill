@@ -1,0 +1,21 @@
+{
+    "dataloader_seed": 200,
+    "model_type": "resnet-18",
+    "dataset": "tiny_imagenet",
+    "validation_size": 0.1,
+
+    "pruning": true,
+    "pre_model_name": 'pretrained_resnet18',
+    "pruner": "lr_rewinding",
+    "pruning_ratio": 0.6,
+    "post_batch_size": 512,
+    "post_epochs": 50,
+    "post_lr": 0.04,
+    "post_lr_drops": [
+        10,
+        30
+    ],
+    "post_lr_drop_rate": 0.1,
+    "post_optimizer": "nesterov",
+    "post_weight_decay": 0.0001
+}

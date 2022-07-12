@@ -1,0 +1,19 @@
+{
+    "dataloader_seed": 200,
+    "model_type": "mobilenet-v2",
+    "dataset": "tiny_imagenet",
+    "batch_size": 256,
+    "validation_size": 0.1,
+
+    "pre_train": true,
+    "epochs": 120,
+    "lr": 0.05,
+    "lr_drops": [
+        60,
+        80,
+        100
+    ],
+    "lr_drop_rate": 0.1,
+    "optimizer": "nesterov",
+    "weight_decay": 0.0005
+}

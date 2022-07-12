@@ -1,0 +1,20 @@
+{
+    "dataloader_seed": 200,
+    "model_type": "vgg-19",
+    "dataset": "cifar100",
+    "validation_size": 0.1,
+
+    "pruning": true,
+    "pruner": "lr_rewinding",
+    "pruning_ratio": 0.8,
+    "post_batch_size": 128,
+    "post_epochs": 130,
+    "post_lr": 0.1,
+    "post_lr_drops": [
+        39,
+        84
+    ],
+    "post_lr_drop_rate": 0.1,
+    "post_optimizer": "nesterov",
+    "post_weight_decay": 0.0002
+}
