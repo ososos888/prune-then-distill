@@ -30,6 +30,8 @@ python main.py --pre_train --pruning --kd
 
 * If you want to run `training | pruning | kd` separately, you can refer to 1.2/1.3/1.4 below.
 
+* In this version, we provide the student model used in the experiment. (Structured pruning applied)
+
 ### 1.2 Train Model
 The following command will train the model.
 ```
@@ -50,7 +52,7 @@ python main.py --pruning
 
 ### 1.4 Distill the Teacher to Student
 ```
-python main.py --KD
+python main.py --kd
 ```
 * Run KD only
 * Put the teacher model to be pruned as `.pth` in the `experiments/teacher_model` folder.  Put the name of the model in the
