@@ -95,7 +95,7 @@ def run(platform, model, teacher_model):
     for epoch in tqdm(range(platform.opt.kd_epochs)):
         training_loss = train_kd(model, teacher_model, platform, train_loader, optimizer, criterion_kd)
         tester.run(model, training_loss=training_loss, epoch=epoch+1, test_mode="val_eval")
-        tester.run(model, test_mode="test_eval")
+        # tester.run(model, test_mode="test_eval")
         scheduler.step()
 
     # Load the validation model with the highest accuracy and test.
