@@ -169,3 +169,7 @@ def vgg19dbl_rwd_st59(input_shape, num_classes, dense_classifier=False, pretrain
 def vgg19dbl_rwd_st79(input_shape, num_classes, dense_classifier=False, pretrained=False):
     plan = _plan("19_dbl_st_79")
     return _vgg('vgg19_dbl_79', plan, ConvBNModule, num_classes, dense_classifier, pretrained)
+
+
+def vgg_custom(input_shape, num_classes, plan, dense_classifier=False, pretrained=False):
+    return _vgg('vgg_custom', plan, ConvBNModule, num_classes, dense_classifier, pretrained)

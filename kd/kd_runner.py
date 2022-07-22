@@ -17,7 +17,13 @@ def run(platform):
     teacher_model.load_state_dict(torch.load(platform.model_path["teacher_model_path"], map_location=platform.device))
 
     # Get student model
-    model = get_model(platform.opt.student_model_type, platform.opt.dataset).to(platform.device)
+    if "custom" in platform.opt.student_model_type:
+        model = get_model(platform.opt.student_model_type,
+                          platform.opt.dataset,
+                          plan=teacher_model.get_student_plan()
+                          ).to(platform.device)
+    else:
+        model = get_model(platform.opt.student_model_type, platform.opt.dataset).to(platform.device)
     model.weight_counter()
     model.logging_table(platform.logger)
     if platform.opt.kd_type == 'vanilla':

@@ -2,7 +2,7 @@ import torch
 from models import cifar_vgg, tinyimagenet_resnet, tinyimagenet_vgg, tinyimagenet_mobilenetv2
 
 
-def get_model(model_type, dataset):
+def get_model(model_type, dataset, plan=None):
     """
     This function is getting model, initialize and save the original model.
     INPUT:
@@ -38,6 +38,7 @@ def get_model(model_type, dataset):
         'vgg19dbl-rwd-st36': cifar_vgg.vgg19dbl_rwd_st36,
         'vgg19dbl-rwd-st59': cifar_vgg.vgg19dbl_rwd_st59,
         'vgg19dbl-rwd-st79': cifar_vgg.vgg19dbl_rwd_st79,
+        'vgg-custom': cifar_vgg.vgg_custom
     }
 
     tiny_imagenet_models = {
@@ -70,6 +71,10 @@ def get_model(model_type, dataset):
                          f"Supported model in {dataset}:\n"
                          f"{list(models[dataset].keys())}")
 
-    model = models[dataset][model_type](input_shape, num_classes)
+    if "custom" in model_type:
+        model = models[dataset][model_type](input_shape, num_classes, plan)
+    else:
+        model = models[dataset][model_type](input_shape, num_classes)
+    model.model_type = model_type
 
     return model
