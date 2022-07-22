@@ -32,6 +32,8 @@ python main.py --pre_train --pruning --kd
 
 * In this version, we provide the student model used in the experiment. (Structured pruning applied)
 
+* If you want to use the end-to-end student model, use `--student_model vgg-custom`. This creates a VGG student model according to the teacher model (only VGG is currently available and ResNet version will be updated)
+
 ### 1.2 Train Model
 The following command will train the model.
 ```
@@ -60,6 +62,7 @@ python main.py --kd
 * If the name of the teacher model is `vgg19_pruned.pth` then you can directly edit the `kd_default.json` in
 `experiments/hyperparam` or enter python commands to run it.
   ex) `python main.py --kd --teacher_model_name vgg19_pruned`
+* If you want to use the end-to-end student model, use `--student_model vgg-custom`. This creates a VGG student model according to the teacher model (only VGG is currently available and ResNet version will be updated)
 
 ### 1.5 Available models
 * CIFAR100
@@ -75,7 +78,8 @@ python main.py --kd
         'vgg19dbl',
         'vgg19dbl-rwd-st36',
         'vgg19dbl-rwd-st59',
-        'vgg19dbl-rwd-st79'
+        'vgg19dbl-rwd-st79',
+        'vgg-custom'
     }
 ```
 
