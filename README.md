@@ -2,7 +2,7 @@
 
 ### Welcome
 
-This is an PyTorch implement of the paper ``Prune Your Model Before Distill It''.
+This is an PyTorch implement of the paper [``Prune Your Model Before Distill It''](https://arxiv.org/abs/2109.14960).
 
 ## Table of Contents
 
